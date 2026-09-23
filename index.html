@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#176f99" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="주사위" />
+    <title>주사위 굴리기</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="style.css?v=20260923-shake" />
+  </head>
+  <body>
+    <main class="app-shell" aria-label="주사위 굴리기">
+      <section class="game-panel" aria-label="주사위 게임판">
+        <header class="control-bar" aria-label="주사위 설정">
+          <div class="count-control" aria-label="주사위 개수 조절">
+            <button id="decrease" class="icon-button" type="button" aria-label="주사위 개수 줄이기" title="주사위 개수 줄이기">−</button>
+            <output id="count" aria-live="polite">2개</output>
+            <button id="increase" class="icon-button" type="button" aria-label="주사위 개수 늘리기" title="주사위 개수 늘리기">+</button>
+          </div>
+          <div class="utility-controls">
+            <button id="shake-toggle" class="icon-button shake-toggle" type="button" aria-label="흔들어서 주사위 굴리기 활성화" aria-pressed="false" title="흔들기 사용">
+              <span id="shake-icon" aria-hidden="true">📳</span>
+              <span id="shake-label" class="sr-only">흔들기 사용</span>
+            </button>
+            <button id="sound-toggle" class="icon-button sound-toggle is-on" type="button" aria-label="효과음 켜짐, 눌러서 끄기" aria-pressed="true" title="효과음">
+              <span id="sound-icon" aria-hidden="true">🔊</span>
+              <span id="sound-label" class="sr-only">효과음 ON</span>
+            </button>
+            <button id="fullscreen-button" class="icon-button fullscreen-button" type="button" aria-label="전체화면으로 전환" aria-pressed="false" title="전체화면">
+              <span id="fullscreen-icon" aria-hidden="true">⛶</span>
+              <span id="fullscreen-label" class="sr-only">전체화면</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="dice-stage">
+          <div id="dice-area" class="dice-area" aria-label="현재 주사위"></div>
+        </div>
+
+        <section class="result" aria-live="polite" aria-atomic="true" aria-label="주사위 결과">
+          <p id="result-values" class="result-values">4 · 1</p>
+          <p class="total"><span>합계</span> <strong id="total-value">5</strong></p>
+        </section>
+
+        <button id="roll-button" class="roll-button" type="button" aria-label="주사위 굴리기">
+          <span aria-hidden="true">🎲</span> 굴리기
+        </button>
+        <p id="shake-hint" class="shake-hint" role="status" aria-live="polite" aria-atomic="true"></p>
+      </section>
+    </main>
+    <script src="script.js?v=20260923-pwa"></script>
+  </body>
+</html>
