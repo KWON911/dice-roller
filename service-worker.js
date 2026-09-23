@@ -1,10 +1,12 @@
-const CACHE_NAME = 'dice-roller-v1';
+const CACHE_NAME = 'dice-roller-v2';
 const APP_SHELL = [
   './',
   './index.html',
   './style.css',
   './script.js',
   './manifest.webmanifest',
+  './favicon.ico',
+  './icons/favicon-32.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon-512-maskable.png',
